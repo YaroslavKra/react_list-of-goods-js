@@ -1,7 +1,6 @@
 import 'bulma/css/bulma.css';
 import './App.scss';
 import { useState } from 'react';
-import { useEffect } from 'react';
 import classNames from 'classnames';
 
 export const goodsFromServer = [
@@ -26,7 +25,7 @@ export const App = () => {
     setSortType('alphabetical');
   };
 
-  const reset = () => {
+  const handleReset = () => {
     setGoods(goodsFromServer);
     setSortType('default');
     setIsReversed(false);
@@ -86,7 +85,7 @@ export const App = () => {
             className={classNames(`button is-danger`, {
               'is-light': true,
             })}
-            onClick={reset}
+            onClick={handleReset}
           >
             Reset
           </button>
